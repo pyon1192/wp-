@@ -1,0 +1,406 @@
+/*
+Theme Name: shikibuton
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*ボーダーやパディングが要素の幅に含まれるようにする*/
+  }
+  body {
+    font-family: 'Raleway', sans-serif;
+    color: gray;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+  }
+  main {
+    margin: 0 10vw;
+  }
+
+  .thick-line {
+    height: 5px;
+    background-color: gray;  /* 背景色を黒に設定 */
+}
+
+  
+  a:visited {
+    color: inherit; /* 訪問済みのリンクの色を親要素のテキスト色に設定 */
+  }
+
+  header {
+    padding: 0 10vw;
+    font-size: 1.2em;
+    background-color:  white  ; /*ヘッダーの背景色設定*/
+    color: gray; /*テキスト色設定*/
+    width: 100%; /*横幅設定*/
+    z-index: 1;
+  }
+  header img{
+      width: 15vw; /*横幅設定*/
+      z-index: 1;
+      padding-top: 10vh;
+
+    }
+  
+
+  nav ul {
+    justify-content: flex-end;
+    list-style: none; /*リストの前に出るマーカーを消す*/
+    display: flex;
+    height: 100%;
+
+  }
+  
+  nav ul li {
+    font-size: 1.5em;
+    text-align: right;; /*右余白を20pxにする。*/
+    height: 100%;
+  }
+  
+  nav ul li a {
+    color:gray;
+    text-decoration: none;
+    padding: 2vh; /* 上下のパディングを増やして高さを調整 */
+    display: flex; /* ブロックレベル要素にする */
+    height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: #FF6F61 ; /* ホバー時の背景色をピンクに設定 */
+    color: white; /* ホバー時のテキスト色を白に変更 */
+  }
+
+
+  .hero-image-container {
+    position: relative;  /* 親要素に対して相対位置を指定 */
+}
+
+.hero-image {
+    /* ここに画像のスタイリングをする。例えば、background-imageで画像をセット */
+    background-image: url('/img/cat.jpeg');
+    height: 60vh;  /* 高さと幅を設定 */
+    width: 100%;
+}
+
+/* h1とh5に絶対位置を指定して、親要素（.hero-image-container）に対して配置 */
+.hero-image-container h1{
+    position: absolute;
+    top: 30%;
+    right: -2%;
+    transform: translate(-50%, -50%);
+    color: white;  /* 文字色を白に設定 */
+}
+.hero-image-container p {
+  font-size:1.2em;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0, -50%);
+  color: white;  /* 文字色を白に設定 */
+}
+
+  
+ 
+  .scrollDownButton {
+    margin-top: 30px;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #FF6F61;
+    border: none;
+    border-radius: 50%; /* 丸型にする */
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s; /* 色の変更を滑らかに */
+    display: flex;  /* flexboxを使う */
+    align-items: center;  /* 縦方向の中央に */
+    justify-content: center;  
+    animation: upDown 1.5s infinite alternate ease-in-out;
+    
+  }
+  
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+  }
+
+  .scrollDownButton:hover {
+    background-color:  #FFB6C1  ; /* マウスオーバー時の背景色 */
+  }
+
+
+
+  .profile-container {
+    padding-top:10vh;
+    justify-content: left; 
+    animation: fadeIn 2s ease-in-out;
+    color: gray;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+  }
+
+  .profile-container h1{
+    font-size: 3em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: left;
+  }
+
+  .profile-container p{
+    color:black;
+    font-size: 1.1em;
+    margin-top:30px;
+    width:50%;
+    text-align: left;
+  }
+  .works-container {
+    justify-content: left;
+    padding-top: 15vh;
+    margin-bottom: 5vh;
+    height: 130vh;
+    position: relative;
+  }
+
+  .works-container h1{
+    font-size: 3em;
+    position: relative;
+    text-align: left;
+  }
+  
+
+  .works-container p{
+    color: #000;
+    font-size: 1.1em;
+    margin-top:30px;
+    text-align: left;
+    margin-bottom: 10vh;
+  }
+
+  
+  
+  .index-title {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+}
+  .line{
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 px;
+  }
+  
+  .works-container .scrollDownButton {
+    position: absolute; /* 画面に固定 */
+    bottom: 0; /* 縦の中央に位置するように設定 */
+    left: 47%; /* 横の中央に位置するように設定 */
+    transform: translate(-50%, 50%); /* トランスフォームを使って完全に中央に配置 */
+    z-index: 0; /* 他の要素よりも前面に表示 */
+}
+
+
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-height: 100vh;
+  }
+
+  .button-grid img {
+    object-fit: cover; /* コンテナの高さを設定 */
+    overflow: hidden; /* コンテナの外に出た部分を隠す */
+    transition: transform 0.3s, box-shadow 0.3s; /*トランジション追加*/
+  }
+
+  .button-grid img:hover {
+    transform: scale(1.05); /* 追加: サイズを少し大きくする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 追加: 影を付ける */
+}
+
+  .button-item{
+    text-align: center;
+  }
+
+  .button-laber{
+    font-size:5em;
+  }
+
+
+
+  
+  .modal-button{
+    background-color: white;
+    border: none;
+  }
+
+  .modal-button img {
+    width: 35vw;  /* コンテナの幅を設定 */
+    height: 30vh; /* コンテナの高さを設定 */
+    overflow: hidden;
+    cursor: pointer;
+    object-fit: cover;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0.6, 0.6);  /* x-offset, y-offset, blur, color */
+  }
+
+  
+
+
+
+/* スキル、資格のコンテナ */
+.skill-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10vw;
+  padding-right: 10vw;
+background-color:rgba(255, 255, 255, 0.8);  
+}
+
+.skill-text {
+  padding-top: 3vh;
+  padding-bottom: 5vh;
+  color: gray;
+  background-color:rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+}
+.skill-text h1{
+  font-size: 3em;
+  position: relative;
+  text-align: left;
+}
+
+.skill-text p{
+  color:#000;
+  margin-top:15px;
+  text-align: left;
+}
+
+
+/* カードセクション */
+.card-section {
+  width: 45%;
+  height: 100%;
+  background-color: #cacaca40;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+skill-section {
+  width: 45%;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+qualification-section {
+  width: 45%;
+  height: 100%;
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* カード */
+.card {
+  text-align: left;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(0);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* ホバー時のアニメーション */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* アイコン */
+.card i {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color:  gray;
+}
+
+/* タイトル */
+.card h3 {
+  margin-top: 10px;
+  color: black;
+}
+
+/* タイトルの下の線 */
+.card-section h2 {
+  font-size: 2em;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  color: gray;
+}
+
+.card-section h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: gray
+}
+
+/*詳細表示*/
+.detail {
+  display: none; /* デフォルトでは非表示 */
+  font-size: 1em;
+  color: #000;
+}
+
+.skill-card:hover .detail {
+  display: block; /* マウスオーバー時に表示 */
+}
+
+.skill-card::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  visibility: hidden;
+}
+  
+
+footer {
+  background-color: #ffffff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #000000;
+}
