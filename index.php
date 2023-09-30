@@ -28,26 +28,28 @@
         <p>
             趣味での開発から、大学の研究内での開発、依頼を受けた会社HPの開発など。
         </p>
-    <div class="overlay" id="overlay"></div>
+  <div class="overlay" id="overlay"></div>
     <div class="works">
-    <div class="button-grid">
-        <?php if (have_posts() ): ?>
-        <?php while ( have_posts() ) : the_post();?>
-        <div class="button-item">
-            <a class="modal-button" href="<?php the_permalink(); ?>">
-                <?php if ( has_post_thumbnail()): ?>
-                    <img src="<?php the_post_thumbnail('post-thumbnails');?>">
-                <?php else: ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/lab1.jpeg" alt="">
-            </a>
-            <?php endif; ?>
-                <p class="button-label"><?php the_title(); ?></p>
-            <?php endwhile; else: ?>
-                <p>投稿がありません</p>
-            <?php endif; ?>
-        </div>
-    </div>  
-
+      <div class="button-grid">
+          <?php if (have_posts() ): ?>
+          <?php while ( have_posts() ) : the_post();?>
+          <div class="button-item">
+            <?php if ( has_post_thumbnail()): ?>
+              <a class="modal-button" href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('post-thumbnails');?>
+              </a>
+            <?php else: ?>
+              <a class="modal-button" href="<?php the_permalink(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/lab1.jpeg" alt="投稿がありません">
+              </a>
+          </div>
+              <?php endif; ?>
+                  <p class="button-label"><?php the_title(); ?></p>      
+              <?php endwhile; else: ?>
+                  <p>投稿がありません</p>
+              <?php endif; ?>
+          
+      </div>  
     </div>
 </div>   
 <!-- 全体のコンテナ -->
