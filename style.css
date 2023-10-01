@@ -6,11 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*ボーダーやパディングが要素の幅に含まれるようにする*/
-  }
+  box-sizing: border-box; /*ボーダーやパディングが要素の幅に含まれるようにする*/
+}
   body {
+    margin:0;
+    background-color: rgb(227, 227, 227);
     font-family: 'Raleway', sans-serif;
     color: gray;
     font-weight: 700;
@@ -18,9 +18,6 @@ html {
     line-height: 1.6;
     box-sizing: border-box;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
-  }
-  main {
-    margin: 0 10vw;
   }
 
   .thick-line {
@@ -34,7 +31,7 @@ html {
   }
 
   header {
-    padding: 0 10vw;
+    padding: 0 15vw;
     font-size: 1.2em;
     background-color:  white  ; /*ヘッダーの背景色設定*/
     color: gray; /*テキスト色設定*/
@@ -54,7 +51,7 @@ html {
     list-style: none; /*リストの前に出るマーカーを消す*/
     display: flex;
     height: 100%;
-
+    margin:0;
   }
   
   nav ul li {
@@ -79,21 +76,22 @@ html {
 
 
   .hero-image-container {
+    width:100%;
     position: relative;  /* 親要素に対して相対位置を指定 */
 }
 
-.hero-image {
-    /* ここに画像のスタイリングをする。例えば、background-imageで画像をセット */
-    background-image: url('/img/cat.jpeg');
-    height: 60vh;  /* 高さと幅を設定 */
-    width: 100%;
+.hero-image-container img{
+  /* ここに画像のスタイリングをする。例えば、background-imageで画像をセット */
+  height: 60vh;  /* 高さと幅を設定 */
+  width: 100%;
+  display: block;
 }
 
 /* h1とh5に絶対位置を指定して、親要素（.hero-image-container）に対して配置 */
 .hero-image-container h1{
     position: absolute;
     top: 30%;
-    right: -2%;
+    right: 5%;
     transform: translate(-50%, -50%);
     color: white;  /* 文字色を白に設定 */
 }
@@ -101,126 +99,83 @@ html {
   font-size:1.2em;
   position: absolute;
   top: 50%;
-  right: 0%;
+  right: 3%;
   transform: translate(0, -50%);
   color: white;  /* 文字色を白に設定 */
 }
 
-  
- 
-  .scrollDownButton {
-    margin-top: 30px;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #FF6F61;
-    border: none;
-    border-radius: 50%; /* 丸型にする */
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s; /* 色の変更を滑らかに */
-    display: flex;  /* flexboxを使う */
-    align-items: center;  /* 縦方向の中央に */
-    justify-content: center;  
-    animation: upDown 1.5s infinite alternate ease-in-out;
-    
-  }
-  
-  .arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid white;
-  }
-
-  .scrollDownButton:hover {
-    background-color:  #FFB6C1  ; /* マウスオーバー時の背景色 */
-  }
-
-
-
-  .profile-container {
-    padding-top:10vh;
-    justify-content: left; 
-    animation: fadeIn 2s ease-in-out;
-    color: gray;
-    background-color: rgba(255, 255, 255, 0.8);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
-  }
-
-  .profile-container h1{
-    font-size: 3em;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    position: relative;
-    text-align: left;
-  }
-
-  .profile-container p{
-    color:black;
-    font-size: 1.1em;
-    margin-top:30px;
-    width:50%;
-    text-align: left;
-  }
-  .works-container {
-    justify-content: left;
-    padding-top: 15vh;
-    margin-bottom: 5vh;
-    height: 130vh;
-    position: relative;
-  }
-
-  .works-container h1{
-    font-size: 3em;
-    position: relative;
-    text-align: left;
-  }
-  
-
-  .works-container p{
-    color: #000;
-    font-size: 1.1em;
-    margin-top:30px;
-    text-align: left;
-    margin-bottom: 10vh;
-  }
-
-  
-  
-  .index-title {
-    color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    font-size: 1vw;
+.profile-container {
+  padding: 2vh 15vw;
+  justify-content: left; 
+  color: gray;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
 }
-  .line{
-    flex-grow: 1;
-    height: 1px;
-    background-color: #ccc;
-    margin: 0 px;
-  }
-  
-  .works-container .scrollDownButton {
-    position: absolute; /* 画面に固定 */
-    bottom: 0; /* 縦の中央に位置するように設定 */
-    left: 47%; /* 横の中央に位置するように設定 */
-    transform: translate(-50%, 50%); /* トランスフォームを使って完全に中央に配置 */
-    z-index: 0; /* 他の要素よりも前面に表示 */
+
+.profile-container h1{
+  font-size: 3em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: left;
+}
+
+.profile-container p{
+  color:black;
+  font-size: 1.1em;
+  margin-top:30px;
+  width:50%;
+  text-align: left;
+}
+.works-container {
+  padding: 2vh 15vw;
+  justify-content: left;
+  margin-bottom: 5vh;
+  height: auto;
+  position: relative;
+}
+
+.works-container h1{
+  font-size: 3em;
+  position: relative;
+  text-align: left;
 }
 
 
+.works-container p{
+  color: #000;
+  font-size: 1.1em;
+  margin-top:30px;
+  text-align: left;
+}
+
+
+.works{
+  overflow: scroll;
+}
+.index-title {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  font-size: 1vw;
+}
+.line{
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0 px;
+}
 
   .button-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    max-height: 100vh;
+    grid-auto-rows: auto; 
+    gap: 3vw;
+    
   }
 
+
   .button-grid img {
+    width: 60%;
     object-fit: cover; /* コンテナの高さを設定 */
     overflow: hidden; /* コンテナの外に出た部分を隠す */
     transition: transform 0.3s, box-shadow 0.3s; /*トランジション追加*/
@@ -232,7 +187,9 @@ html {
 }
 
   .button-item{
-    text-align: center;
+    text-align: left;
+    padding-right: 5vw;
+    padding-top: 3vh;
   }
 
   .button-laber{
@@ -241,18 +198,19 @@ html {
 
 
 
-  
+  /* worksの画像調整 */
   .modal-button{
     background-color: white;
     border: none;
   }
 
   .modal-button img {
-    width: 35vw;  /* コンテナの幅を設定 */
-    height: 30vh; /* コンテナの高さを設定 */
+    width: 30vw;  /* コンテナの幅を設定 */
+    height: 45vh; /* コンテナの高さを設定 */
     overflow: hidden;
     cursor: pointer;
     object-fit: cover;
+    object-position: top;
     box-shadow: 10px 5px 10px rgba(0, 0, 0.6, 0.6);  /* x-offset, y-offset, blur, color */
   }
 
@@ -262,14 +220,14 @@ html {
 
 /* スキル、資格のコンテナ */
 .skill-container {
+  padding: 0 15vw;
   display: flex;
   justify-content: space-between;
-  padding-left: 10vw;
-  padding-right: 10vw;
 background-color:rgba(255, 255, 255, 0.8);  
 }
 
 .skill-text {
+  padding: 0 15vw;
   padding-top: 3vh;
   padding-bottom: 5vh;
   color: gray;
@@ -392,7 +350,8 @@ qualification-section {
 
 footer {
   background-color: #ffffff;
-  padding: 20px 0;
+  padding-top: 6vh;
+  padding-bottom: 2vh;
 }
 
 .footer-content {
